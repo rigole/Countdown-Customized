@@ -56,11 +56,17 @@ function updateCountdown(e) {
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
   console.log(countdownTitle, countdownDate );
-  // Get number version of current Date , updateDom
-  countdownValue =  new Date(countdownDate).getTime();
-  console.log('countdown value:', countdownValue);
+   // Check for valid date
+   if (countdownDate === ''){
+     alert("Please select a valid date");
+   }
+   else{
+     // Get number version of current Date , updateDom
+     countdownValue =  new Date(countdownDate).getTime();
+     console.log('countdown value:', countdownValue);
 
-  updateDOM();
+     updateDOM();
+   }
 
 }
 
